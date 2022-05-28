@@ -30,6 +30,7 @@ db.offre_candidats= require("./offre_candidat.model")(sequelize,Sequelize);
 db.fixe_entretiens=require("./fixe_entretien.model")(sequelize,Sequelize);
 db.roles = require("./role.model")(sequelize,Sequelize);
 db.recrutements = require("./recrutement.model")(sequelize,Sequelize);
+db.postes = require("./poste.models")(sequelize,Sequelize);
 
 
 db.candidats.belongsToMany(db.offres, { through: "offre_candidats"});
