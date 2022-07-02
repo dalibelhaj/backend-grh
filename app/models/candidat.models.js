@@ -18,8 +18,14 @@ module.exports = (sequelize, Sequelize) => {
      diplomes: {
         type: Sequelize.TEXT
     },
+  
     experience: {
-        type: Sequelize.STRING
+    type: Sequelize.TEXT
+
+    },
+    annee : {
+        type :Sequelize.TEXT
+
     },
     skills:{
         type:Sequelize.TEXT
@@ -27,7 +33,7 @@ module.exports = (sequelize, Sequelize) => {
     picture:{
         type:Sequelize.STRING
 
-    },
+    }, 
     cv:{
       type:Sequelize.STRING
 
@@ -36,6 +42,9 @@ module.exports = (sequelize, Sequelize) => {
     type:Sequelize.STRING
 
     }
+    
     });
-    return Candidat;
+
+
+return Candidat 
 };

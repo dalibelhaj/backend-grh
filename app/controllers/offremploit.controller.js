@@ -20,7 +20,7 @@ exports.create = (req, res) => {
       description: req.body.description,
       post: req.body.post,
       nembposte: req.body.nembposte,
-      exigence: req.body.exigence,
+      competence: req.body.competence,
       deparoff: req.body.deparoff,
       finoffre: req.body.finoffre,
       etat: req.body.etat,

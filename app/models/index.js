@@ -33,6 +33,8 @@ db.recrutements = require("./recrutement.model")(sequelize,Sequelize);
 db.postes = require("./poste.models")(sequelize,Sequelize);
 
 
+
+
 db.candidats.belongsToMany(db.offres, { through: "offre_candidats"});
 db.offres.belongsToMany(db.candidats, {through: "offre_candidats"});
 db.offre_candidats.belongsTo(db.candidats);
@@ -60,6 +62,13 @@ db.employes.belongsToMany(db.roles,{
     foreignKey: "employeId",
     otherKey:"roleId"
 });
+
+
+
+
+// Create scope 'withhobbies'
+ 
+
 
 
 db.ROLES = ["user", "admin"];

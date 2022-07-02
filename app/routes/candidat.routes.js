@@ -5,6 +5,7 @@ module.exports = app => {
   
     router.post("/", candidats.upload,candidats.addCandidat);
     //router.post("/", candidats.create,candidats.upload);
+
   
     router.get("/", candidats.findAll);
   

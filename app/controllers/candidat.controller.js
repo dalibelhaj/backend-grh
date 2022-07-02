@@ -2,9 +2,7 @@ const db = require("../models");
 const Candidat = db.candidats;
 const Op = db.Sequelize.Op;
 const multer = require('multer');
-const path = require('path')
-
-
+const path = require('path');
 
 
 
@@ -13,6 +11,7 @@ const path = require('path')
 
 exports.addCandidat = async (req, res )=> {
 
+
   let info = {
     nom: req.body.nom,
     prenom: req.body.prenom,
@@ -20,20 +19,27 @@ exports.addCandidat = async (req, res )=> {
     tel: req.body.tel,
     adresse: req.body.adresse,
     diplomes: req.body.diplomes,
-    experience: req.body.experience,
     skills: req.body.skills,
     statut:req.body.statut,
+    experience:req.body.experience,
+    annee:req.body.annee,
     picture:req.files.picture[0].path,
     cv:req.files.cv[0].path,
+    
 
   }
 
-  const candidat = await Candidat.create(info) 
+
+
+  const candidat = await Candidat.create(info)
+  
+ 
+  
   try{
   res.status(200).send(candidat)
   console.log(candidat)
   console.log(req.formdata)
-  console.log(req.file)
+
   } catch (err) {
     console.error("Something went wrong")
     console.error(err)
@@ -217,7 +223,11 @@ exports.upload = multer({
 
 
 
-
+// const candidat =await Candidat.findAll(info,{include:[
+//   {
+//         model: Experience, as: "experiences" // <---- HERE
+//   }
+// ]})
 
 
 

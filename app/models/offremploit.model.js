@@ -17,7 +17,7 @@ module.exports = (sequelize, Sequelize) => {
      nembposte: {
          type: Sequelize.INTEGER
      },
-     exigence: {
+     competence: {
          type: Sequelize.STRING
      },
      deparoff: {
